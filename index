@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Kingdom Character: A Sermon on the Mount</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        h1, h2, h3 {
+            font-family: 'Lora', serif;
+        }
+        .highlight {
+            color: #2563eb; /* blue-600 */
+            cursor: pointer;
+            font-weight: 500;
+            transition: color 0.3s;
+            border-bottom: 1px dotted #2563eb;
+        }
+        .highlight:hover {
+            color: #1d4ed8; /* blue-700 */
+        }
+        details > summary {
+            cursor: pointer;
+        }
+        details[open] > summary {
+            margin-bottom: 1rem;
+        }
+        .gemini-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: #f1f5f9; /* slate-100 */
+            color: #1e293b; /* slate-800 */
+            border: 1px solid #cbd5e1; /* slate-300 */
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            margin-top: 1rem;
+        }
+        .gemini-btn:hover {
+            background-color: #e2e8f0; /* slate-200 */
+            border-color: #94a3b8; /* slate-400 */
+        }
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #2563eb;
+            animation: spin 1s ease infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+    <!-- Modal for Gemini Insights -->
+    <div id="insightModal" class="fixed inset-0 bg-black bg-opacity-60 z-50 flex justify-center items-center p-4 hidden" onclick="closeModal()">
+        <div class="bg-white rounded-lg shadow-xl p-6 lg:p-8 max-w-2xl w-full max-h-[90vh] flex flex-col" onclick="event.stopPropagation()">
+            <h3 id="modalTitle" class="text-2xl font-bold text-slate-900 mb-4 font-serif">✨ Gemini Insight</h3>
+            <div id="modalContentContainer" class="flex-grow overflow-y-auto pr-2">
+                 <div id="modalLoading" class="flex justify-center items-center h-48">
+                    <div class="spinner"></div>
+                </div>
+                <p id="modalContent" class="text-slate-700 leading-relaxed whitespace-pre-wrap"></p>
+            </div>
+            <button onclick="closeModal()" class="mt-6 w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">Close</button>
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto">
+        <!-- Header with Background Image -->
+        <header 
+            class="relative text-center mb-10 bg-cover bg-center rounded-b-lg shadow-lg" 
+            style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop');">
+            
+            <!-- Overlay for text readability -->
+            <div class="absolute inset-0 bg-black/50 rounded-b-lg"></div>
+
+            <!-- Doves Image -->
+            <img 
+                src="https://www.pngkey.com/png/full/2-23236_white-dove-png-transparent-image-doves-flying-png.png" 
+                alt="Doves flying" 
+                class="absolute top-4 right-4 w-20 h-auto sm:w-28 opacity-80"
+                onerror="this.style.display='none'">
+
+            <!-- Header Content -->
+            <div class="relative z-10 py-20 px-4">
+                <h1 class="text-4xl md:text-5xl font-bold text-white">The Kingdom Character</h1>
+                <p class="text-xl md:text-2xl text-slate-200 mt-2 font-serif">A Sermon on the Mount (Enhanced with Gill & JFB)</p>
+            </div>
+        </header>
+        
+        <div class="p-4 sm:p-6 md:p-8">
+            <!-- Introduction -->
+            <section id="introduction" class="bg-white p-6 rounded-lg shadow-md mb-8">
+                <h2 class="text-2xl font-bold mb-4 text-slate-900 border-b pb-2">Introduction</h2>
+                <p class="text-slate-700 leading-relaxed">Beloved brothers and sisters, we gather today to explore one of the most profound and transformative teachings ever delivered: Jesus' Sermon on the Mount, found in Matthew chapters 5, 6, and 7. This isn't just a collection of moral sayings; it's a blueprint for life in God's kingdom, a radical reversal of worldly values, and a revelation of true righteousness. As John Gill, the esteemed commentator, reminds us, these teachings provide "priceless gems of information" that delve into the depths of Scripture and the human heart. And the Jamieson-Fausset-Brown commentary further illuminates how Jesus, in this sermon, unveils the "new and living way" that transcends the mere letter of the Old Testament law.</p>
+            </section>
+            
+            <!-- Historical Context (Collapsible) -->
+            <section class="bg-white p-6 rounded-lg shadow-md mb-8">
+                 <details>
+                    <summary class="text-2xl font-bold text-slate-900">Historical Context: The Scene, Setting, and Significance</summary>
+                    <div class="mt-4 space-y-4 text-slate-700 leading-relaxed">
+                        <p>The Sermon on the Mount, recorded in Matthew 5-7, is not just a timeless spiritual discourse; it is deeply embedded in a specific historical, geographical, and socio-religious context that profoundly impacts its meaning.</p>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2 text-slate-800">1. The Setting: Galilee and Its People</h3>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>Geographical Location:</strong> The Sermon took place in Galilee, a region in northern ancient Palestine, part of the Roman Empire during Jesus' time. Matthew 4:23-25 indicates that Jesus had been "going throughout all Galilee, teaching in their synagogues and proclaiming the good news of the kingdom, and healing every disease and sickness among the people." Large crowds followed Him from all over Galilee, the Decapolis, Jerusalem, Judea, and beyond the Jordan. The "mount" itself is not precisely identified, but it was likely a gentle hill in the Galilean countryside, providing a natural amphitheater for a large gathering.</li>
+                                <li><strong>Socio-Political Climate:</strong> Galilee was a complex region. Under Roman Rule, with heavy taxation and a constant military presence, there was simmering resentment. Economic inequality was stark, leaving many poor.</li>
+                                <li><strong>Religious and Cultural Mix:</strong> While predominantly Jewish, Galilee had significant Gentile influence, leading to cultural tensions. Galileans were sometimes viewed with disdain by the more orthodox Judeans.</li>
+                                <li><strong>Political Unrest:</strong> Galilee was known for political unrest and anti-Roman sentiments, particularly from groups like the Zealots.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2 text-slate-800">2. The Mount: A Deliberate Echo of Sinai</h3>
+                             <ul class="list-disc pl-5 space-y-2">
+                                 <li><strong>Symbolic Significance:</strong> Jesus deliberately "went up on a mountain" (Matthew 5:1), which carries profound symbolic weight.</li>
+                                 <li><strong>The New Moses:</strong> The most prominent association is with Mount Sinai, where Moses received the Old Covenant Law. Jesus is presented as a <span class="highlight" data-title="The New Moses" data-content="By delivering this 'new law' from a mountain, Jesus positions Himself as a new, and greater, lawgiver than Moses. While Moses delivered the law that revealed sin, Jesus delivers the grace and truth that fulfills the law, addressing the heart's intent rather than just external actions.">new Moses</span>, delivering a new revelation of God's will.</li>
+                                 <li><strong>Place of Revelation:</strong> Mountains in the Bible are often places of divine encounter and revelation.</li>
+                             </ul>
+                        </div>
+                         <div>
+                            <h3 class="text-lg font-semibold mb-2 text-slate-800">3. The Audience: Disciples and Crowds</h3>
+                            <p>"His disciples came to Him" (Matthew 5:1): While open for all, the sermon was primarily directed at His followers as foundational instruction. The presence of the larger, oppressed crowds is also crucial as Jesus' teachings directly addressed their suffering and hunger for true righteousness.</p>
+                        </div>
+                         <div>
+                            <h3 class="text-lg font-semibold mb-2 text-slate-800">4. The Significance: Kingdom Values for a Broken World</h3>
+                            <p>In a world of oppression, Jesus offered a different kind of revolution—one of humility, mercy, and love. He moved beyond external law-keeping to the motives of the heart, calling for a righteousness that surpassed that of the religious leaders and defining what it means to be a true follower of Christ.</p>
+                        </div>
+                    </div>
+                </details>
+            </section>
+    
+            <!-- Main Sermon Content -->
+            <main class="space-y-8">
+                <!-- I. The Beatitudes -->
+                <section id="beatitudes" class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-3xl font-bold mb-4 text-slate-900 border-b pb-3">I. The Beatitudes: The Blessed Life</h2>
+                    <div class="prose-content">
+                        <p class="mb-6 text-slate-600">Jesus begins with the Beatitudes, a series of pronouncements on who is truly "<span class="highlight" data-title="Makarios (Blessed)" data-content="The Greek word 'makarios' means blessed or happy, but it signifies more than a fleeting emotion. It describes a deep, spiritual joy and contentment that comes from a right relationship with God—an inner state of well-being that is not dependent on external circumstances.">blessed</span>." Gill clarifies this isn't worldly happiness, but a deep, spiritual joy. JFB adds these are "paradoxical blessings," turning the world's wisdom on its head.</p>
+                        <div class="space-y-6">
+                            <div>
+                                <blockquote class="border-l-4 border-blue-500 pl-4 italic text-lg font-semibold text-slate-700">"Blessed are the poor in spirit, for theirs is the kingdom of heaven." (Matthew 5:3)</blockquote>
+                                <p class="mt-2 text-slate-700 leading-relaxed"><strong>Theological & Historical Context:</strong> In a world that values self-sufficiency, Jesus elevates humility. Gill explains being "<span class="highlight" data-title="Poor in Spirit" data-content="This refers to a profound self-awareness of one's spiritual emptiness and utter dependence on God. It is the conscious admission of spiritual bankruptcy, recognizing that we have nothing to offer God for our salvation and must rely completely on His grace and mercy.">poor in spirit</span>" means recognizing one's complete spiritual bankruptcy before God. JFB emphasizes this is "not poverty of worldly means, but lowliness of mind," an emptiness that prepares the heart to receive God. This humble realization is the gateway to the Kingdom of Heaven.</p>
+                            </div>
+                            <div>
+                                <blockquote class="border-l-4 border-blue-500 pl-4 italic text-lg font-semibold text-slate-700">"Blessed are those who mourn, for they will be comforted." (Matthew 5:4)</blockquote>
+                                <p class="mt-2 text-slate-700 leading-relaxed"><strong>Theological & Historical Context:</strong> This mourning isn't just common sorrow. Gill emphasizes that it refers to a godly sorrow over sin—our own sins and the pervasive brokenness and evil in the world. It’s the grief of a heart sensitive to God's holiness. JFB adds that this mourning involves "grief for sin, for the misery it has brought, and for the absence of God." To such mourners, God promises divine comfort, a peace that transcends earthly understanding.</p>
+                            </div>
+                            <div>
+                                <blockquote class="border-l-4 border-blue-500 pl-4 italic text-lg font-semibold text-slate-700">"Blessed are the meek, for they will inherit the earth." (Matthew 5:5)</blockquote>
+                                <p class="mt-2 text-slate-700 leading-relaxed"><strong>Theological & Historical Context:</strong> Meekness is often misunderstood as weakness. However, Gill views it as a gentle, yet powerful, submission to God's will and a patient endurance of mistreatment from others. JFB interprets this meekness as "that spirit which patiently suffers wrong, and which, when provoked, does not retort." It's a humility that trusts God's justice and timing, refusing to retaliate. In contrast to those who grasp for power, the meek, through divine inheritance, will possess the ultimate promised land—the renovated earth and eternal dwelling with God.</p>
+                            </div>
+                             <div>
+                                <blockquote class="border-l-4 border-blue-500 pl-4 italic text-lg font-semibold text-slate-700">"Blessed are those who hunger and thirst for righteousness, for they will be filled." (Matthew 5:6)</blockquote>
+                                <p class="mt-2 text-slate-700 leading-relaxed"><strong>Theological & Historical Context:</strong> This describes an intense, desperate craving—like physical hunger and thirst—for righteousness. Gill interprets "righteousness" here broadly, encompassing both the justifying righteousness given by Christ and a fervent desire for moral purity and justice. JFB highlights this as a "passionate yearning for personal holiness and for the spread of God's righteous rule." God promises to satisfy this spiritual yearning, filling them with His grace and truth.</p>
+                            </div>
+                            <div>
+                                <blockquote class="border-l-4 border-blue-500 pl-4 italic text-lg font-semibold text-slate-700">"Blessed are the merciful, for they will be shown mercy." (Matthew 5:7)</blockquote>
+                                <p class="mt-2 text-slate-700 leading-relaxed"><strong>Theological & Historical Context:</strong> Mercy, in biblical terms, is compassion in action, especially towards the needy and undeserving. Gill highlights that this beatitude calls for practical acts of kindness, forgiveness, and active pity towards others. JFB states that mercy here is "pity for the miserable, expressed in active benevolence." Those who extend mercy will, in turn, receive it from God, a principle Jesus further elaborates on in the Lord's Prayer.</p>
+                            </div>
+                             <div>
+                                <blockquote class="border-l-4 border-blue-500 pl-4 italic text-lg font-semibold text-slate-700">"Blessed are the pure in heart, for they will see God." (Matthew 5:8)</blockquote>
+                                <p class="mt-2 text-slate-700 leading-relaxed"><strong>Theological & Historical Context:</strong> "Pure in heart" speaks to internal integrity, sincerity, and undivided devotion to God. Gill explains that this isn't merely outward conformity to the law, but an inward cleanliness, free from hypocrisy and hidden sin. JFB emphasizes that this purity involves "freedom from guile, sincerity of motive, and simplicity of aim." Such purity of intention and affection is prerequisite for genuine communion with God, culminating in the beatific vision of Him.</p>
+                            </div>
+                             <div>
+                                <blockquote class="border-l-4 border-blue-500 pl-4 italic text-lg font-semibold text-slate-700">"Blessed are the peacemakers, for they will be called children of God." (Matthew 5:9)</blockquote>
+                                <p class="mt-2 text-slate-700 leading-relaxed"><strong>Theological & Historical Context:</strong> Peacemakers are not merely passive lovers of peace, but active agents who strive to reconcile conflicting parties, bringing harmony in relationships, both human and divine. Gill sees them as those who actively work to resolve disputes and share the Gospel of peace. JFB defines peacemakers as "those who make peace between alienated parties, and who seek to live peaceably with all men." Their work reflects the very nature of God, the ultimate Peacemaker, establishing them as His true offspring.</p>
+                            </div>
+                             <div>
+                                <blockquote class="border-l-4 border-blue-500 pl-4 italic text-lg font-semibold text-slate-700">"Blessed are those who are persecuted because of righteousness, for theirs is the kingdom of heaven." (Matthew 5:10-12)</blockquote>
+                                <p class="mt-2 text-slate-700 leading-relaxed"><strong>Theological & Historical Context:</strong> Jesus concludes by addressing the inevitable opposition His followers will face. Gill notes that this persecution arises specifically "for righteousness' sake," meaning for living out the principles of the Kingdom and for their allegiance to Christ. JFB points out that this persecution is for their "conformity to Christ and His righteousness." Rather than being a sign of God's disfavor, persecution for righteousness is a mark of true discipleship, leading to the ultimate reward of the Kingdom of Heaven.</p>
+                            </div>
+                        </div>
+                    </div>
+                     <button class="gemini-btn" onclick="generateReflection('beatitudes')">✨ Generate Reflection</button>
+                </section>
+                
+                <!-- II. Higher Righteousness -->
+                <section id="higher-righteousness" class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-3xl font-bold mb-4 text-slate-900 border-b pb-3">II. The Higher Righteousness: Fulfilling the Law</h2>
+                     <div class="prose-content">
+                        <p class="mb-6 text-slate-700 leading-relaxed">Following the Beatitudes, Jesus declares, "Do not think that I have come to abolish the Law or the Prophets; I have not come to abolish them but to fulfill them" (Matthew 5:17). Gill's commentary emphasizes that Jesus did not come to discard the Old Testament, but to perfectly obey it and reveal its true intent. JFB concurs, stating that Jesus came to "give it its full exposition, and bring out its true, spiritual, and comprehensive meaning."</p>
+                        <ul class="list-disc pl-5 space-y-4 text-slate-700">
+                            <li><strong>Murder and Anger (Matthew 5:21-26):</strong> Jesus equates unjustified anger and hateful words with the act of murder itself, showing that sin begins in the heart.</li>
+                            <li><strong>Adultery and Lust (Matthew 5:27-30):</strong> He extends the prohibition against adultery to include lustful thoughts, revealing the spiritual nature of the commandment.</li>
+                            <li><strong>Oaths and Truthfulness (Matthew 5:33-37):</strong> Jesus teaches radical honesty, advocating for a simple "yes" or "no" instead of elaborate oaths.</li>
+                            <li><strong>Retaliation and Love for Enemies (Matthew 5:38-48):</strong> In a truly revolutionary teaching, Jesus calls His followers to go beyond "an eye for an eye," urging them to turn the other cheek, give generously, and, most profoundly, to love their enemies and pray for those who persecute them.</li>
+                        </ul>
+                    </div>
+                     <button class="gemini-btn" onclick="generateReflection('higher-righteousness')">✨ Generate Reflection</button>
+                </section>
+                
+                <!-- III. Practicing Righteousness -->
+                <section id="practicing-righteousness" class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-3xl font-bold mb-4 text-slate-900 border-b pb-3">III. Practicing Righteousness: True Piety</h2>
+                    <div class="prose-content">
+                        <p class="mb-6 text-slate-700 leading-relaxed">Chapter 6 focuses on the practices of righteousness, urging disciples to perform their spiritual duties with sincere hearts, seeking God's approval rather than human applause.</p>
+                         <ul class="list-disc pl-5 space-y-4 text-slate-700">
+                            <li><strong>Giving to the Needy (Matthew 6:1-4):</strong> Jesus condemns ostentatious giving, instructing disciples to give in secret.</li>
+                            <li><strong>Prayer (Matthew 6:5-15):</strong> He rebukes hypocritical public prayers and introduces the model prayer, "The Lord's Prayer."</li>
+                            <li><strong>Fasting (Matthew 6:16-18):</strong> Similar to giving, Jesus instructs followers to fast discreetly.</li>
+                        </ul>
+                    </div>
+                     <button class="gemini-btn" onclick="generateReflection('practicing-righteousness')">✨ Generate Reflection</button>
+                </section>
+    
+                <!-- IV. Living the Kingdom Life -->
+                <section id="living-the-kingdom-life" class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-3xl font-bold mb-4 text-slate-900 border-b pb-3">IV. Living the Kingdom Life: Priorities and Discernment</h2>
+                    <div class="prose-content">
+                        <p class="mb-6 text-slate-700 leading-relaxed">The final section of the Sermon addresses the priorities and practical wisdom for living out Kingdom principles.</p>
+                         <ul class="list-disc pl-5 space-y-4 text-slate-700">
+                            <li><strong>Treasures in Heaven (Matthew 6:19-24):</strong> Jesus urges His disciples to store up "treasures in heaven," emphasizing single-minded devotion to God.</li>
+                            <li><strong>Worry (Matthew 6:25-34):</strong> In a powerful call to trust, Jesus admonishes against anxiety over material needs, commanding followers to "seek first His kingdom and His righteousness."</li>
+                            <li><strong>Judging Others (Matthew 7:1-5):</strong> Jesus warns against hypocritical judgment, using the vivid imagery of a "plank" in one's own eye.</li>
+                            <li><strong>The Golden Rule (Matthew 7:12):</strong> "So in everything, do to others what you would have them do to you, for this sums up the Law and the Prophets."</li>
+                            <li><strong>The Narrow and Wide Gates (Matthew 7:13-14):</strong> Jesus presents two paths: the wide, easy road to destruction, and the narrow, difficult road to life.</li>
+                             <li><strong>False Prophets (Matthew 7:15-23):</strong> Jesus warns against false teachers, who can be recognized by their "fruit"—their character and the effects of their teachings.</li>
+                             <li><strong>The Wise and Foolish Builders (Matthew 7:24-27):</strong> Jesus concludes with a parable contrasting those who hear and obey (the wise builder on the rock) with those who hear but do not obey (the foolish builder on the sand).</li>
+                        </ul>
+                    </div>
+                     <button class="gemini-btn" onclick="generateReflection('living-the-kingdom-life')">✨ Generate Reflection</button>
+                </section>
+                
+                <section id="section2" class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-3xl font-bold mb-4 text-slate-900 border-b pb-3">Section 2: Further Analysis of Matthew 5</h2>
+                    <div class="space-y-6 text-slate-700 leading-relaxed">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2 text-slate-800">The Significance of the Mount</h3>
+                            <p>The Sermon on the Mount is profoundly significant because it is a sermon delivered *on a mountain*. This intentionally echoes Moses receiving the Old Covenant Law from God on Mount Sinai (Exodus 19:20). When Moses returned, his face was radiant from being in God's presence (Exodus 34:29). Jesus, as the new Moses, delivers the New Covenant. This new teaching does not abolish the old law but completes it. As Jesus said in Matthew 5:17, "Do not think that I have come to abolish the Law or the Prophets; I have not come to fulfill them but to fulfill them." He came to complete the law, revealing its deepest meaning.</p>
+                        </div>
+                         <div>
+                            <h3 class="text-xl font-semibold mb-2 text-slate-800">The Meaning of "Blessed" (Makarios)</h3>
+                            <p>The Greek word used for "blessed" is <span class="highlight" data-title="Makarios (A Deeper Dive)" data-content="While several Greek words can mean 'happy,' 'makarios' was chosen specifically. It denotes a state of profound, divinely-sourced joy and contentment that is independent of one's external circumstances. It describes the spiritual prosperity of one who is in right standing with God, a perfect peace that the environment cannot disrupt.">makarios</span>. This is more than just feeling happy. The official translation points to a state of being, a perfect peace where your environment or surrounding events do not affect your inner joy. The biblical meaning is a deep, spiritual contentment that comes from being close to God. The emphasis is on the inward reality, the state of the heart, rather than an outward appearance. Jesus is saying that for people in these seemingly difficult situations, they shall truly receive this profound inner peace.</p>
+                        </div>
+                         <div>
+                            <h3 class="text-xl font-semibold mb-2 text-slate-800">Frameworks of the Mind: Beatitude Insights</h3>
+                            <h4 class="text-lg font-medium mt-4 mb-2 text-slate-800">On Being "Poor in Spirit" (Ref. Luke 18:9-14, Psalm 40:4, 17)</h4>
+                            <p>In the Beatitudes, "poor in spirit" doesn't just mean being low on confidence. It's about recognizing your spiritual need for God. The practical result of this blessing is that we bring an honest appraisal of ourselves to our work and life. We don't inflate our résumé or boast about our position. We know how difficult it is to work with people who cannot learn, grow, or accept correction because they are trying to maintain an inflated picture of themselves. So we commit ourselves to honesty about ourselves.</p>
+                            <h4 class="text-lg font-medium mt-4 mb-2 text-slate-800">On "Those Who Mourn"</h4>
+                            <p>"Those who mourn" aren't just sad, they're deeply aware of the brokenness in the world and their own shortcomings. The second beatitude builds on our mental recognition of our poverty of spirit by adding an emotional response of sorrow. When we face the evil in our own lives, it saddens us; when we face the evil in the world—which includes possible evil in our workplace—that, too, touches our emotions with grief. The evil may come from ourselves, from others, or from sources unknown. In any case, when we honestly mourn evil words, evil deeds, or evil policies, God sees our sorrow and comforts us with the knowledge that it will not always be this way.</p>
+                        </div>
+                    </div>
+                </section>
+                 <section class="bg-white p-6 rounded-lg shadow-md">
+                     <h2 class="text-2xl font-bold mb-4 text-slate-900 border-b pb-2">Conclusion</h2>
+                    <p class="text-slate-700 leading-relaxed">The Sermon on the Mount is more than a moral code; it's a call to embody the very character of God's kingdom. It challenges us to live with radical humility, profound compassion, unwavering integrity, and courageous love—not relying on our own strength, but on the transforming power of God. As John Gill's commentary profoundly reminds us, these teachings are "priceless gems," and as JFB so clearly lays out, they are the "very charter and constitution of Christ's kingdom." May we, like the wise builder, not only hear these words but put them into practice, building our lives on the unshakable rock of Christ and His teachings.</p>
+                </section>
+    
+    
+                <!-- Gemini Q&A Section -->
+                <section id="gemini-qa" class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-3xl font-bold mb-4 text-slate-900">✨ Ask a Question about the Sermon</h2>
+                    <p class="text-slate-600 mb-4">Have a question about the Sermon on the Mount? Ask Gemini for a deeper understanding.</p>
+                    <div class="space-y-4">
+                        <textarea id="qa-input" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" rows="4" placeholder="For example: What does it mean to be the 'salt of the earth' today?"></textarea>
+                        <button id="qa-button" class="gemini-btn w-full sm:w-auto justify-center" style="background-color: #2563eb; color: white;" onclick="askQuestion()">
+                            Ask Gemini
+                        </button>
+                    </div>
+                </section>
+    
+    
+                <!-- Footer/References -->
+                <footer class="mt-10 text-center text-slate-500">
+                    <h3 class="text-lg font-semibold mb-2">References for Further Study</h3>
+                    <div class="flex flex-col space-y-1">
+                        <a href="https://www.biblestudytools.com/commentaries/gills-exposition-of-the-bible/matthew/" class="hover:text-blue-600 transition-colors" target="_blank" rel="noopener noreferrer">John Gill's Exposition of the Bible - Matthew</a>
+                        <a href="https://www.biblestudytools.com/commentaries/jamieson-fausset-brown/matthew/" class="hover:text-blue-600 transition-colors" target="_blank" rel="noopener noreferrer">Jamieson-Fausset-Brown Bible Commentary - Matthew</a>
+                        <a href="https://www.biblegateway.com/resources/sermon-on-the-mount/overview" class="hover:text-blue-600 transition-colors" target="_blank" rel="noopener noreferrer">Bible Gateway - Sermon on the Mount Overview</a>
+                    </div>
+                </footer>
+            </main>
+        </div>
+    </div>
+    
+    <script>
+        const modal = document.getElementById('insightModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalContent = document.getElementById('modalContent');
+        const modalLoading = document.getElementById('modalLoading');
+        const highlights = document.querySelectorAll('.highlight');
+        
+        // --- Static Modal Logic ---
+        highlights.forEach(highlight => {
+            highlight.addEventListener('click', (e) => {
+                e.preventDefault();
+                modalTitle.textContent = highlight.getAttribute('data-title');
+                modalContent.textContent = highlight.getAttribute('data-content');
+                modalLoading.style.display = 'none';
+                modalContent.style.display = 'block';
+                modal.classList.remove('hidden');
+            });
+        });
+
+        function closeModal() {
+            modal.classList.add('hidden');
+        }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+        
+        // --- Gemini API Integration ---
+        
+        /**
+         * Calls the Gemini API to generate content.
+         * @param {string} prompt The prompt to send to the Gemini API.
+         */
+        async function callGemini(prompt) {
+            // Display the modal and the loading spinner
+            modal.classList.remove('hidden');
+            modalLoading.style.display = 'flex';
+            modalContent.style.display = 'none';
+            modalContent.textContent = ''; // Clear previous content
+
+            const apiKey = "AIzaSyDau5t4329ezFMf1zF6AFKPZazW6QFvRhY"; // API Key will be injected by the environment
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [{
+                    role: "user",
+                    parts: [{ text: prompt }]
+                }]
+            };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API request failed with status ${response.status}`);
+                }
+
+                const result = await response.json();
+                
+                let text = "Sorry, I couldn't generate a response. Please try again.";
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    text = result.candidates[0].content.parts[0].text;
+                }
+                
+                modalContent.textContent = text;
+
+            } catch (error) {
+                console.error("Gemini API Error:", error);
+                modalContent.textContent = `An error occurred: ${error.message}. Please check the console for details.`;
+            } finally {
+                // Hide loading spinner and show content
+                modalLoading.style.display = 'none';
+                modalContent.style.display = 'block';
+            }
+        }
+
+        /**
+         * Generates a reflection for a specific section.
+         * @param {string} sectionId The ID of the section element.
+         */
+        function generateReflection(sectionId) {
+            const section = document.getElementById(sectionId);
+            const contentElement = section.querySelector('.prose-content');
+            if (!contentElement) {
+                console.error("Could not find content for section:", sectionId);
+                return;
+            }
+            
+            const sectionText = contentElement.innerText;
+            const sectionTitle = section.querySelector('h2').innerText;
+
+            const prompt = `Please generate a short, personal reflection or prayer based on the following teaching from Jesus' Sermon on the Mount, titled "${sectionTitle}". Help the reader understand how to apply these principles to their life today in a practical, modern context. Keep the tone reverent, personal, and encouraging.\n\nHere is the text for context:\n\n---\n${sectionText}\n---`;
+            
+            modalTitle.textContent = `✨ Reflection on ${sectionTitle}`;
+            callGemini(prompt);
+        }
+        
+        /**
+         * Asks a question using the Q&A input field.
+         */
+        function askQuestion() {
+            const userInput = document.getElementById('qa-input').value;
+            if (!userInput.trim()) {
+                alert("Please enter a question.");
+                return;
+            }
+
+            // For context, we can provide the introduction text
+            const sermonIntro = document.getElementById('introduction').innerText;
+
+            const prompt = `A user is asking a question about the Sermon on the Mount. Please provide a helpful, clear, and biblically-grounded answer. You can reference the overall themes and teachings of the sermon to inform your response.
+
+            Here is some context from the introduction of the sermon study they are reading:
+            "${sermonIntro}"
+
+            Here is the user's question:
+            "${userInput}"`;
+
+            modalTitle.textContent = `✨ Answering Your Question`;
+            callGemini(prompt);
+        }
+
+    </script>
+</body>
+</html>
